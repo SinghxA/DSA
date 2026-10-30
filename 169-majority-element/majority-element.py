@@ -8,7 +8,6 @@ class Solution:
             else:
                 count[num]=1
 
-        ans=sorted(count,key=count.get,reverse=True)[:1]
+        return max(count,key=count.get)
 
-        k=ans[0]  
-        return k      
+        
