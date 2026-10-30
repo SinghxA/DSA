@@ -23,31 +23,45 @@
 #             if value > n // 2:
 #                 return key  
 
-# MOORE VOTING ALGO
+# # MOORE VOTING ALGO
+
+# class Solution:
+#     def majorityElement(self, nums: list[int]) -> int:
+#         ele=nums[0]
+#         count=0
+#         for num in nums:
+#             if num==ele:
+#                 count+=1
+
+#             else:
+#                 count-=1
+#                 if count==0:
+#                     ele=num
+#                     count=1
+
+#         return ele
+
+# or
 
 class Solution:
-    def majorityElement(self, nums: list[int]) -> int:
-        ele=nums[0]
-        count=0
+    def majorityElement(self, nums: list[int]) -> int:            
+        candidate = None
+        count = 0
+
         for num in nums:
-            if num==ele:
-                count+=1
+            if count == 0:
+                candidate = num
 
+            if num == candidate:
+                count += 1
             else:
-                count-=1
-                if count==0:
-                    ele=num
-                    count=1
+                count -= 1
 
-        return ele
+        return candidate
 
+                        
 
-                
-
-
-                 
-
-            
+                    
 
             
             
