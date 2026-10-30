@@ -10,15 +10,48 @@
 
 #         return max(count,key=count.get)
 
+# class Solution:
+#     def majorityElement(self, nums: list[int]) -> int:
+#         count = {}
+
+#         for num in nums:
+#             count[num] = count.get(num, 0) + 1
+
+#         n = len(nums)
+
+#         for key, value in count.items():
+#             if value > n // 2:
+#                 return key  
+
+# MOORE VOTING ALGO
+
 class Solution:
     def majorityElement(self, nums: list[int]) -> int:
-        count = {}
-
+        ele=nums[0]
+        count=0
         for num in nums:
-            count[num] = count.get(num, 0) + 1
+            if num==ele:
+                count+=1
 
-        n = len(nums)
+            else:
+                count-=1
+                if count==0:
+                    ele=num
+                    count=1
 
-        for key, value in count.items():
-            if value > n // 2:
-                return key  
+        return ele
+
+
+                
+
+
+                 
+
+            
+
+            
+            
+
+       
+
+
